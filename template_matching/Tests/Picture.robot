@@ -1,9 +1,9 @@
 *** Settings ***
-Library    api.py                               
+Library    ../Libraries/api.py                                       
 Library    SeleniumLibrary           
 Test Setup    Open Browser And Maximize
 Test Teardown    Capture Screenshot And Close Browser
-Library    Resources/pictures.py    
+    
 
 *** Test Cases ***
 
@@ -17,16 +17,16 @@ Open Browser And Maximize
     # Maximize Browser Window  
     
 Capture Screenshot And Close Browser
-    Set Screenshot Directory    Screenshot   
+    Set Screenshot Directory    ../Screenshot   
     Capture Page Screenshot    
     Close Browser
 
 Compare Image   
     [Arguments]    ${screenshot_name}     @{file_paths}    
-    Set Screenshot Directory    Screenshot
+    Set Screenshot Directory    ../Screenshot
     Capture Page Screenshot    ${screenshot_name}
     :FOR    ${filename}     IN    @{file_paths}  
-    \    ${result}=    api.Match Template    Screenshot/${screenshot_name}    Pictures/${filename}
+    \    ${result}=    api.Match Template    ../Screenshot/${screenshot_name}    ../Pictures/${filename}
     \    BuiltIn.Log    Testing ${filename}    console=True
     \    BuiltIn.Run Keyword And Continue On Failure    BuiltIn.Should Be True    ${result}    msg=Template not found on the website ${filename}    
     

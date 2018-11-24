@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.6 on darwin)" generated="20181124 17:23:06.917">
+<suite id="s1" name="Picture" source="/Users/lukasloukota/Work/Programming/Python/hackerschool/hackathon/template_matching/template_matching/Picture.robot">
+<test id="s1-t1" name="Test Front Page">
+<kw name="Open Browser And Maximize" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${WebPageURL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181124 17:23:07.259" level="INFO">Opening browser 'chrome' to base url 'https://alza.cz'.</msg>
+<status status="PASS" starttime="20181124 17:23:07.259" endtime="20181124 17:23:13.285"></status>
+</kw>
+<status status="PASS" starttime="20181124 17:23:07.259" endtime="20181124 17:23:13.285"></status>
+</kw>
+<kw name="Compare Image">
+<arguments>
+<arg>Screenshot-Alza.png</arg>
+<arg>wrong.png</arg>
+<arg>alza-logo.png</arg>
+</arguments>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20181124 17:23:13.287" endtime="20181124 17:23:13.287"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${screenshot_name}</arg>
+</arguments>
+<msg timestamp="20181124 17:23:14.107" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshot/Screenshot-Alza.png"&gt;&lt;img src="Screenshot/Screenshot-Alza.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20181124 17:23:13.287" endtime="20181124 17:23:14.107"></status>
+</kw>
+<kw name="${filename} IN [ @{file_paths} ]" type="for">
+<kw name="${filename} = wrong.png" type="foritem">
+<kw name="Match Template" library="api">
+<doc>:param file_path:       path to the main file (screenshot of a website)</doc>
+<arguments>
+<arg>Screenshot/${screenshot_name}</arg>
+<arg>Pictures/${filename}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181124 17:23:14.326" level="INFO">Screenshot/Screenshot-Alza.png Pictures/wrong.png</msg>
+<msg timestamp="20181124 17:23:14.326" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20181124 17:23:14.108" endtime="20181124 17:23:14.326"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Testing ${filename}</arg>
+<arg>console=True</arg>
+</arguments>
+<msg timestamp="20181124 17:23:14.326" level="INFO">Testing wrong.png</msg>
+<status status="PASS" starttime="20181124 17:23:14.326" endtime="20181124 17:23:14.327"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>BuiltIn.Should Be True</arg>
+<arg>${result}</arg>
+<arg>msg=Template not found on the website ${filename}</arg>
+</arguments>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>msg=Template not found on the website ${filename}</arg>
+</arguments>
+<msg timestamp="20181124 17:23:14.327" level="FAIL">Template not found on the website wrong.png</msg>
+<status status="FAIL" starttime="20181124 17:23:14.327" endtime="20181124 17:23:14.327"></status>
+</kw>
+<status status="FAIL" starttime="20181124 17:23:14.327" endtime="20181124 17:23:14.327"></status>
+</kw>
+<status status="FAIL" starttime="20181124 17:23:14.108" endtime="20181124 17:23:14.328"></status>
+</kw>
+<kw name="${filename} = alza-logo.png" type="foritem">
+<kw name="Match Template" library="api">
+<doc>:param file_path:       path to the main file (screenshot of a website)</doc>
+<arguments>
+<arg>Screenshot/${screenshot_name}</arg>
+<arg>Pictures/${filename}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181124 17:23:14.501" level="INFO">Screenshot/Screenshot-Alza.png Pictures/alza-logo.png</msg>
+<msg timestamp="20181124 17:23:14.502" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20181124 17:23:14.328" endtime="20181124 17:23:14.502"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Testing ${filename}</arg>
+<arg>console=True</arg>
+</arguments>
+<msg timestamp="20181124 17:23:14.502" level="INFO">Testing alza-logo.png</msg>
+<status status="PASS" starttime="20181124 17:23:14.502" endtime="20181124 17:23:14.502"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>BuiltIn.Should Be True</arg>
+<arg>${result}</arg>
+<arg>msg=Template not found on the website ${filename}</arg>
+</arguments>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>msg=Template not found on the website ${filename}</arg>
+</arguments>
+<status status="PASS" starttime="20181124 17:23:14.503" endtime="20181124 17:23:14.503"></status>
+</kw>
+<status status="PASS" starttime="20181124 17:23:14.502" endtime="20181124 17:23:14.503"></status>
+</kw>
+<status status="PASS" starttime="20181124 17:23:14.328" endtime="20181124 17:23:14.503"></status>
+</kw>
+<status status="FAIL" starttime="20181124 17:23:14.107" endtime="20181124 17:23:14.503"></status>
+</kw>
+<status status="FAIL" starttime="20181124 17:23:13.286" endtime="20181124 17:23:14.503"></status>
+</kw>
+<kw name="Capture Screenshot And Close Browser" type="teardown">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20181124 17:23:14.504" endtime="20181124 17:23:14.504"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181124 17:23:15.493" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshot/selenium-screenshot-2.png"&gt;&lt;img src="Screenshot/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20181124 17:23:14.504" endtime="20181124 17:23:15.494"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181124 17:23:15.494" endtime="20181124 17:23:15.567"></status>
+</kw>
+<status status="PASS" starttime="20181124 17:23:14.503" endtime="20181124 17:23:15.568"></status>
+</kw>
+<status status="FAIL" starttime="20181124 17:23:07.258" endtime="20181124 17:23:15.568" critical="yes">Template not found on the website wrong.png</status>
+</test>
+<status status="FAIL" starttime="20181124 17:23:06.918" endtime="20181124 17:23:15.570"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Picture">Picture</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181124 17:23:07.257" level="WARN">Imported library '/Users/lukasloukota/Work/Programming/Python/hackerschool/hackathon/template_matching/template_matching/Resources/pictures.py' contains no keywords.</msg>
+</errors>
+</robot>
