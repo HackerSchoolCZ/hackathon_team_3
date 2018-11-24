@@ -1,0 +1,1 @@
+tested_pictures = ['alza-logo.png']
