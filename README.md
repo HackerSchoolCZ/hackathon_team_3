@@ -1,6 +1,8 @@
-## Installation
-`virtualenv venv`
+# Hackathon project
+Testing if alza logo appears on alza main page.
 
-`source venv/bin/activate`
+## Requirements
+- opencv-python
+- numpy
 
-`pip install -rU requirements.txt`
+Installation is documented in Library folder in README.md
