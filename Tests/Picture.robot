@@ -21,8 +21,9 @@ Capture Screenshot And Close Browser
     Capture Page Screenshot    
     Close Browser
 
-Compare Image   
-    [Arguments]    ${screenshot_name}     @{file_paths}    
+Compare Image
+    [Arguments]    ${screenshot_name}     @{file_paths}
+    [Documentation]     Takes in screenshot_name and list of picture names to compare the screenshot with.
     Set Screenshot Directory    ../Screenshot
     Capture Page Screenshot    ${screenshot_name}
     :FOR    ${filename}     IN    @{file_paths}  
