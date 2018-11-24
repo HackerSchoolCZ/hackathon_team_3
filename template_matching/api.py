@@ -3,7 +3,7 @@ import numpy as np
 
 
 
-class TemplateMatching(object):
+class api(object):
     def match_template(self, file_path, template_path):
         """
 
@@ -12,6 +12,7 @@ class TemplateMatching(object):
         :return:
         """
         # cv2.namedWindow("imageWindow")
+        print(file_path, template_path)
         img_rgb = cv2.imread(file_path)
         img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 
