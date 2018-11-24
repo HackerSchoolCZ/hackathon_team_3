@@ -1,1 +1,1 @@
-tested_pictures = ['alza-logo.png']
+tested_pictures = ['alza-logo.png', 'bad.png']
