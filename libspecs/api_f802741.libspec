@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="api" type="library" format="ROBOT" generated="20181124 17:28:56">
+<version></version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for test library ``api``.</doc>
+<kw name="Match Template">
+<arguments>
+<arg>file_path</arg>
+<arg>template_path</arg>
+</arguments>
+<doc>:param file_path:       path to the main file (screenshot of a website)
+:param template_path:   path to the template (logo on a website, ..., the element to be found)
+:return:</doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

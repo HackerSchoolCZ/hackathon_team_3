@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectConfiguration>
+    <configVersion>2</configVersion>
+    <relativeTo>WORKSPACE</relativeTo>
+    <referencedLibrary type="PYTHON" name="api" path="/Users/lukasloukota/Work/Programming/Python/hackerschool/hackathon/template_matching/template_matching"/>
+    <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="/anaconda3/lib/python3.6/site-packages"/>
+    <referencedLibrary type="PYTHON" name="pictures" path="/Users/lukasloukota/Work/Programming/Python/hackerschool/hackathon/template_matching/template_matching/Resources"/>
+    <pythonpath/>
+    <classpath/>
+    <excludedForValidation/>
+    <isValidatedFileSizeCheckingEnabled>true</isValidatedFileSizeCheckingEnabled>
+    <validatedFileMaxSize>1024</validatedFileMaxSize>
+    <isReferencedLibrariesAutoReloadEnabled>true</isReferencedLibrariesAutoReloadEnabled>
+    <isReferencedLibrariesAutoDiscoveringEnabled>true</isReferencedLibrariesAutoDiscoveringEnabled>
+    <isLibrariesAutoDiscoveringSummaryWindowEnabled>false</isLibrariesAutoDiscoveringSummaryWindowEnabled>
+</projectConfiguration>
